@@ -63,10 +63,10 @@
     <preference name="UIWebViewBounce" value="false" />
      
 
-   <plugin name="cordova-plugin-opentokjs"  source="npm" /> 
+   <plugin name="com.tokbox.cordova.opentok" source="pgb" />
 
     <gap:plugin name="de.appplant.cordova.plugin.printer" />
-    <!--<gap:plugin name="org.crosswalk.engine" source="pgb" />-->
+    <gap:plugin name="org.crosswalk.engine" source="pgb" />
     <gap:plugin name="org.apache.cordova.splashscreen" source="npm" />
     <gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />
     <gap:plugin name="org.apache.cordova.file" source="npm" />
