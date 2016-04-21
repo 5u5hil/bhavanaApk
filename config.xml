@@ -19,7 +19,7 @@
 	
 	
 	<platform name="android">
-        <preference name="android-targetSdkVersion" value="21"/> 
+        <preference name="android-targetSdkVersion" value="18"/> 
 	<splash src="splash/splash.png" />
 	<splash src="splash/drawable-port-ldpi-screen.png" platform="android" qualifier="ldpi" />
 	<splash src="splash/drawable-port-mdpi-screen.png" platform="android" qualifier="mdpi" />
