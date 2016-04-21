@@ -20,7 +20,7 @@
 	
 	<platform name="android">
             <!-- <preference name="android-targetSdkVersion" value="22"/> -->
-        <!--    <config-file target="AndroidManifest.xml" parent="/manifest">
+            <config-file target="AndroidManifest.xml" parent="/manifest">
         <uses-permission android:name="android.permission.CAMERA" />
         <uses-permission android:name="android.permission.INTERNET" />
         <uses-permission android:name="android.permission.RECORD_AUDIO" />
@@ -28,7 +28,7 @@
         <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
         <uses-feature android:name="android.hardware.camera" android:required="true" />
         <uses-feature android:name="android.hardware.camera.autofocus" android:required="true" />
-      </config-file>-->
+      </config-file>
        
 	<splash src="splash/splash.png" />
 	<splash src="splash/drawable-port-ldpi-screen.png" platform="android" qualifier="ldpi" />
@@ -72,7 +72,7 @@
     <preference name="UIWebViewBounce" value="false" />
     
 
-    <plugin name="com.tokbox.cordova.opentok" spec="1.0.3" source="pgb" /> 
+   <!-- <plugin name="com.tokbox.cordova.opentok" spec="1.0.3" source="pgb" /> -->
 
     <gap:plugin name="de.appplant.cordova.plugin.printer" />
     <gap:plugin name="org.crosswalk.engine" source="pgb" />
