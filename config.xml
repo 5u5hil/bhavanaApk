@@ -19,7 +19,7 @@
 	
 	
 	<platform name="android">
-        <preference name="android-targetSdkVersion" value="23"/>
+        <preference name="android-targetSdkVersion" value="21"/> 
 	<splash src="splash/splash.png" />
 	<splash src="splash/drawable-port-ldpi-screen.png" platform="android" qualifier="ldpi" />
 	<splash src="splash/drawable-port-mdpi-screen.png" platform="android" qualifier="mdpi" />
@@ -65,7 +65,7 @@
     <!--<plugin name="com.tokbox.cordova.opentok" spec="1.0.3" source="pgb" /> -->
 
     <gap:plugin name="de.appplant.cordova.plugin.printer" />
-    <gap:plugin name="cordova-plugin-crosswalk-webview" source="npm" />
+    <gap:plugin name="org.crosswalk.engine" source="pgb" />
     <gap:plugin name="org.apache.cordova.splashscreen" source="npm" />
     <gap:plugin name="org.apache.cordova.inappbrowser" source="npm" />
     <gap:plugin name="org.apache.cordova.file" source="npm" />
