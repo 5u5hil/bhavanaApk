@@ -70,13 +70,7 @@
     <preference name="webviewbounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="UIWebViewBounce" value="false" />
-    <!-- <uses-permission android:name="android.permission.CAMERA" />
-        <uses-permission android:name="android.permission.INTERNET" />
-        <uses-permission android:name="android.permission.RECORD_AUDIO" />
-        <uses-permission android:name="android.permission.WAKE_LOCK" />
-        <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />-->
-        <uses-feature android:name="android.hardware.camera" android:required="true" />
-        <uses-feature android:name="android.hardware.camera.autofocus" android:required="true" />
+     
 
    <!-- <plugin name="com.tokbox.cordova.opentok" spec="1.0.3" source="pgb" /> -->
 
