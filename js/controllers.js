@@ -2084,16 +2084,16 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
                 url: domain + 'appointment/join-doctor',
                 params: {id: $scope.appId, userId: $scope.userId, mode: $scope.mode}
             }).then(function sucessCallback(response) {
-                console.log(response.data);
+               // console.log(response.data);
                 $ionicLoading.hide();
                 $scope.user = response.data.user;
                 $scope.app = response.data.app;
                 //$scope.oToken = "https://test.doctrs.in/opentok/opentok?session=" + response.data.app[0].appointments.opentok_session_id;
                 var apiKey = '45121182';
                 var sessionId = response.data.app[0].appointments.opentok_session_id;
-                console.log('sessionId' + sessionId);
+               // console.log('sessionId' + sessionId);
                 var token = response.data.oToken;
-                console.log('token' + token);
+                //console.log('token' + token);
                 if (OT.checkSystemRequirements() == 1) {
                     session = OT.initSession(apiKey, sessionId);
                     $ionicLoading.hide();
@@ -2127,6 +2127,9 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
                             alert('You lost your internet connection.'
                                     + 'Please check your connection and try connecting again.');
                         }
+                    },
+                    deviceready: function () {
+                        console.log("device ready");
                     }
                 });
                 session.connect(token, function (error) {
@@ -2135,39 +2138,41 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
                         alert("Error connecting: ", error.code, error.message);
                     } else {
 
-                        document.addEventListener("deviceready", onDeviceReady, false);
-                        function onDeviceReady() {
-                            console.log("fadfasdfadf" + navigator.camera);
+//                        document.addEventListener("deviceready", onDeviceReady, false);
+//                        function onDeviceReady() {
+//                            console.log("device ready" + navigator.camera);
+//                        }
 
 
-                            publisher = OT.initPublisher('myPublisherDiv', {width: "30%", height: "30%"});
-                            session.publish(publisher);
-                            var mic = 1;
-                            var mute = 1;
-                            jQuery(".muteMic").click(function () {
-                                if (mic == 1) {
-                                    publisher.publishAudio(false);
-                                    mic = 0;
-                                    $ionicLoading.hide();
-                                } else {
-                                    publisher.publishAudio(true);
-                                    mic = 1;
-                                    $ionicLoading.hide();
-                                }
-                            });
-                            jQuery(".muteSub").click(function () {
-                                if (mute == 1) {
-                                    subscriber.subscribeToAudio(false);
-                                    mute = 0;
-                                    $ionicLoading.hide();
-                                } else {
-                                    subscriber.subscribeToAudio(true);
-                                    mute = 1;
-                                    $ionicLoading.hide();
-                                }
-                            });
-                        }
+
+                        publisher = OT.initPublisher('myPublisherDiv', {width: "30%", height: "30%"});
+                        session.publish(publisher);
+                        var mic = 1;
+                        var mute = 1;
+                        jQuery(".muteMic").click(function () {
+                            if (mic == 1) {
+                                publisher.publishAudio(false);
+                                mic = 0;
+                                $ionicLoading.hide();
+                            } else {
+                                publisher.publishAudio(true);
+                                mic = 1;
+                                $ionicLoading.hide();
+                            }
+                        });
+                        jQuery(".muteSub").click(function () {
+                            if (mute == 1) {
+                                subscriber.subscribeToAudio(false);
+                                mute = 0;
+                                $ionicLoading.hide();
+                            } else {
+                                subscriber.subscribeToAudio(true);
+                                mute = 1;
+                                $ionicLoading.hide();
+                            }
+                        });
                     }
+                    //   }
                 });
             }, function errorCallback(e) {
                 console.log(e);
