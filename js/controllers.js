@@ -1792,7 +1792,7 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
                     }).then(function successCallback(responseData) {
                         alert('Sorry, Your payment time expired');
                         window.localStorage.removeItem('kookooid');
-                          window.localStorage.removeItem('kookooid1');
+                        window.localStorage.removeItem('kookooid1');
                         $timeout(function () {
                             // $state.go('app.consultation-profile', {'id':$scope.product[0].user_id}, {reload: true});
                             $state.go('app.consultations-list', {reload: true});
@@ -1962,7 +1962,7 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
                 window.localStorage.removeItem('supid');
                 window.localStorage.removeItem('mode');
                 window.localStorage.removeItem('kookooid');
-                  window.localStorage.removeItem('kookooid1');
+                window.localStorage.removeItem('kookooid1');
                 window.localStorage.removeItem('coupondiscount');
                 window.localStorage.removeItem('IVendSlot');
                 window.localStorage.removeItem('IVstartSlot');
@@ -2134,32 +2134,39 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
                         $ionicLoading.hide();
                         alert("Error connecting: ", error.code, error.message);
                     } else {
-                        publisher = OT.initPublisher('myPublisherDiv', {width: "30%", height: "30%"});
-                        session.publish(publisher);
-                        var mic = 1;
-                        var mute = 1;
-                        jQuery(".muteMic").click(function () {
-                            if (mic == 1) {
-                                publisher.publishAudio(false);
-                                mic = 0;
-                                $ionicLoading.hide();
-                            } else {
-                                publisher.publishAudio(true);
-                                mic = 1;
-                                $ionicLoading.hide();
-                            }
-                        });
-                        jQuery(".muteSub").click(function () {
-                            if (mute == 1) {
-                                subscriber.subscribeToAudio(false);
-                                mute = 0;
-                                $ionicLoading.hide();
-                            } else {
-                                subscriber.subscribeToAudio(true);
-                                mute = 1;
-                                $ionicLoading.hide();
-                            }
-                        });
+
+                        document.addEventListener("deviceready", onDeviceReady, false);
+                        function onDeviceReady() {
+                            console.log("fadfasdfadf" + navigator.camera);
+
+
+                            publisher = OT.initPublisher('myPublisherDiv', {width: "30%", height: "30%"});
+                            session.publish(publisher);
+                            var mic = 1;
+                            var mute = 1;
+                            jQuery(".muteMic").click(function () {
+                                if (mic == 1) {
+                                    publisher.publishAudio(false);
+                                    mic = 0;
+                                    $ionicLoading.hide();
+                                } else {
+                                    publisher.publishAudio(true);
+                                    mic = 1;
+                                    $ionicLoading.hide();
+                                }
+                            });
+                            jQuery(".muteSub").click(function () {
+                                if (mute == 1) {
+                                    subscriber.subscribeToAudio(false);
+                                    mute = 0;
+                                    $ionicLoading.hide();
+                                } else {
+                                    subscriber.subscribeToAudio(true);
+                                    mute = 1;
+                                    $ionicLoading.hide();
+                                }
+                            });
+                        }
                     }
                 });
             }, function errorCallback(e) {
