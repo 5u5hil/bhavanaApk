@@ -2127,9 +2127,6 @@ angular.module('your_app_name.controllers', ['ionic', 'ngCordova'])
                             alert('You lost your internet connection.'
                                     + 'Please check your connection and try connecting again.');
                         }
-                    },
-                    deviceready: function () {
-                        console.log("device ready");
                     }
                 });
                 session.connect(token, function (error) {
